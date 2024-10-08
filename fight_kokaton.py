@@ -171,7 +171,7 @@ def main():
     bird = Bird((300, 200))
     beam = None
     scores = Score((0, 0, 255))
-    bbeam = []
+    beams = []
     # bomb = Bomb((255, 0, 0), 10)
     bombs = [Bomb((255, 0, 0), 10) for i in range(NUM_OF_BOMBS)]
     clock = pg.time.Clock()
@@ -183,10 +183,10 @@ def main():
             if event.type == pg.KEYDOWN and event.key == pg.K_SPACE:
                 # スペースキー押下でBeamクラスのインスタンス生成
                 beam = Beam(bird)     
-                bbeam.append(beam)
-                for i in range(len(bbeam)):
-                    if beam.rct.colliderect(bomb.rct):  # ビームと爆弾が衝突したら
-                        bbeam[i] = None      
+                #beams.append(beam)
+                #for i in range(len(beams)):
+                 #   if beam.rct.colliderect(bomb.rct):  # ビームと爆弾が衝突したら
+                  #      beams[i] = None      
         screen.blit(bg_img, [0, 0])
         
         for bomb in bombs:
